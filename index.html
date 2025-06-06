@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha lindinha</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+</head>
+<div id="falling-elements-container"></div>
+<body>
+    <header>
+        <h1>Para a pessoa mais especial da minha vida</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ver Carta</a></li>
+                <li><a href="fotos.html">Minhas Fotos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="letter-page">
+        <section class="letter-container">
+            <div class="letter-preview" id="letterPreview">
+                <h2>Clique para abrir a carta!</h2>
+                <button onclick="openLetter()">Abrir Carta</button>
+            </div>
+            <div class="letter-content hidden" id="fullLetterContent">
+                <p>Oi minha lindinha hihi,</p>
+                <p>Queria fazer um presente melhor pois você merece muito MAS MUITOO mais que isso, sinceramente merece o mundo mas você é o meu. Mas vou escrever isso com todo o sentimento que tenho e com todas as foças que posso transmitir por cada letra em que me declaro a essa maravilhosa mulher, a qual quero dedicar minha vida.</p>
+                <p>Queria te agradecer por estar nessa minha vida, nesse momento tão especial para mim. Por ser essa pessoa maravilhosa, por cada segundo da minha vida que você ta comigo e me faz TAO BEM NSSS. Os presentinhos, os abraços cada sorriso desses 6 meses importam tanto pra mim pois fazem quem nos somos e quem vamos ser daqui pra frente.</p>
+                <p>Eu sei que nos dois queremos o tanto um futuro juntos e isso mostra o quanto você é a pessoa certa o quanto me da a certeza e a segurança de que posso te amar cada segundo mais e mais sem medo de que um dia você se canse ou que desista de tudo que temos. Sei que você é única e posso te amar e cuidar de olhos fechados que vou estar fazendo apenas o mínimo para essa pessoa tão incrivel que você é.</p>
+                <p>Quero poder escrever para você por anos ou rever as mensagens e fotinhas para sempre e sentir juntos o que sentimos da primeira vez q enviamos cada uma delas, ou as diversas vezes que fez montagens maravilhoras e perfeitas para papel de parede ou que postamos. Eu te amo do fundo de tudo que entendo por mim e sempre vou ama-la cada dia, cada suspiro cada vez mais e mais e mais. Pois você é tudo pra mim e o que mais desejo é poder ver seu sorriso todos os dias e te fazer cada vez mais feliz amor, te fazer a mulher mais feliz do mundo e ser o homem mais feliz por isso.</p>
+                <p>Separei poucas das melhores fotos e dos momentos mais especial que posso aproveitar estando ao seu lado. Não são todos mas todos com muito amor e muita felicidade que me traz.</p>
+                <p>Com todo o amor que rezide no meu coração durante todo esse tempo,</p>
+                <p>Seu bem ♡</p>
+                <button class="close-button" onclick="closeLetter()">Fechar Carta</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Des do dia 06-12-2024 juntos. Todos os direitos reservados ao meu nenem.</p>
+    </footer>
+
+    <script>
+        function openLetter() {
+            document.getElementById('letterPreview').classList.add('hidden');
+            document.getElementById('fullLetterContent').classList.remove('hidden');
+        }
+
+        function closeLetter() {
+            document.getElementById('fullLetterContent').classList.add('hidden');
+            document.getElementById('letterPreview').classList.remove('hidden');
+        }
+    </script>
+    <script>
+        const container = document.getElementById('falling-elements-container');
+        const symbols = ['❤️', 'K', 'Kay', 'ML', '★']; // Pode adicionar mais
+
+        function createFallingElement() {
+            const el = document.createElement('span');
+            el.classList.add('falling');
+            el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDuration = (Math.random() * 3 + 3) + 's'; // 3s a 6s
+            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+
+            container.appendChild(el);
+
+            // Remove elemento após animação
+            setTimeout(() => {
+            el.remove();
+            }, 6000);
+        }
+
+        // Criar vários elementos continuamente
+        setInterval(createFallingElement, 400); // Ajuste para mais/menos corações
+    </script>
+
+</body>
+</html>
